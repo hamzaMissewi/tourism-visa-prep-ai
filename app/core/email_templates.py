@@ -1,7 +1,7 @@
 import html
 
 APP_NAME = "VisaPrep AI"
-LINKEDIN_URL = "https://www.linkedin.com/in/mahmudulhasan03/"
+LINKEDIN_URL = "https://www.linkedin.com/in/hamzamissaoui/"
 
 TEXT_STYLE = "margin:0 0 14px;font-size:15px;line-height:1.6;color:#374151;"
 BUTTON_STYLE = (
@@ -61,7 +61,7 @@ def welcome_email(app_url: str) -> tuple[str, str, str]:
 </ul>
 <p style="margin:24px 0;"><a href="{safe_url}" style="{BUTTON_STYLE}">Open {APP_NAME}</a></p>
 <p style="{TEXT_STYLE}">Good luck with your application. You have got this!</p>
-<p style="margin:28px 0 0;font-size:15px;line-height:1.6;color:#374151;">Regards,<br><a href="{LINKEDIN_URL}" style="color:#2563eb;font-weight:600;text-decoration:none;">Mahmudul Hasan</a></p>
+<p style="margin:28px 0 0;font-size:15px;line-height:1.6;color:#374151;">Regards,<br><a href="{LINKEDIN_URL}" style="color:#2563eb;font-weight:600;text-decoration:none;">Hamza Missaoui</a></p>
 """
     text = (
         "Hi there,\n\n"
@@ -74,7 +74,7 @@ def welcome_email(app_url: str) -> tuple[str, str, str]:
         "- Get practical interview tips for your consular appointment\n\n"
         f"Open {APP_NAME}: {app_url}\n\n"
         "Good luck with your application. You have got this!\n\n"
-        f"Regards,\nMahmudul Hasan\n{LINKEDIN_URL}"
+        f"Regards,\nHamza Missaoui\n{LINKEDIN_URL}"
     )
     return subject, _page(f"Welcome to {APP_NAME}", content), text
 

@@ -48,8 +48,8 @@ def login(client, email, password=PASSWORD):
 
 
 def expire_cooldown(email):
-    from tests.conftest import TestingSessionLocal
     from app.db.models import PendingRegistration
+    from tests.conftest import TestingSessionLocal
 
     with TestingSessionLocal() as db:
         pending = db.query(PendingRegistration).filter_by(email=email).one()
@@ -80,8 +80,8 @@ def test_correct_code_creates_the_account_and_sends_the_welcome_mail(client, out
     assert welcome["to"] == "new@example.com"
     assert "Welcome" in welcome["subject"]
     assert "Regards" in welcome["text"]
-    assert '<a href="https://www.linkedin.com/in/mahmudulhasan03/"' in welcome["html"]
-    assert ">Mahmudul Hasan</a>" in welcome["html"]
+    assert '<a href="https://www.linkedin.com/in/hamzamissaoui/"' in welcome["html"]
+    assert ">Hamza Missaoui</a>" in welcome["html"]
 
 
 def test_a_failing_welcome_mail_does_not_undo_the_account(client, monkeypatch):
@@ -105,8 +105,8 @@ def test_the_code_is_stored_hashed(client, outbox):
     register(client)
     otp = code_from(outbox[0])
 
-    from tests.conftest import TestingSessionLocal
     from app.db.models import PendingRegistration
+    from tests.conftest import TestingSessionLocal
 
     with TestingSessionLocal() as db:
         pending = db.query(PendingRegistration).one()
@@ -136,8 +136,8 @@ def test_wrong_code_counts_attempts_then_locks(client, outbox):
 
 def test_expired_code_is_rejected(client, outbox):
     register(client)
-    from tests.conftest import TestingSessionLocal
     from app.db.models import PendingRegistration
+    from tests.conftest import TestingSessionLocal
 
     with TestingSessionLocal() as db:
         pending = db.query(PendingRegistration).one()
@@ -209,8 +209,8 @@ def test_email_failure_returns_502_and_stores_nothing(client, monkeypatch):
     monkeypatch.setattr("app.routers.auth.send_email", boom)
     assert register(client).status_code == 502
 
-    from tests.conftest import TestingSessionLocal
     from app.db.models import PendingRegistration
+    from tests.conftest import TestingSessionLocal
 
     with TestingSessionLocal() as db:
         assert db.query(PendingRegistration).count() == 0

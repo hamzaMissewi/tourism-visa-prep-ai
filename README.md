@@ -447,7 +447,7 @@ ExamPrep-AI/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/mahmudulhasan3/examprep-ai.git
+git clone https://github.com/hamzaMissewi/tourism-visa-prep-ai.git
 
 cd ExamPrep-AI
 ```
@@ -715,11 +715,11 @@ Planned improvements include:
 
 ## Author
 
-**Md. Mahmudul Hasan**
+**Md. Hamza Missaoui**
 
 CSE Student | Aspiring Generative AI Engineer
 
-[GitHub](https://github.com/mahmudulhasan3) · [LinkedIn](https://www.linkedin.com/in/mahmudulhasan03/)
+[GitHub](https://github.com/hamzaMissewi) · [LinkedIn](https://www.linkedin.com/in/hamzamissaoui/)
 
 ---
 
@@ -734,4 +734,3 @@ This project is licensed under the [MIT License](LICENSE).
 [⬆ Back to Top](#-examprep-ai)
 
 </div>
-

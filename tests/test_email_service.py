@@ -99,10 +99,10 @@ def test_welcome_template_links_the_signature_to_linkedin():
     )
     assert "Welcome" in subject
     assert (
-        '<a href="https://www.linkedin.com/in/mahmudulhasan03/"' in html_body
-        and ">Mahmudul Hasan</a>" in html_body
+        '<a href="https://www.linkedin.com/in/hamzamissaoui/"' in html_body
+        and ">Hamza Missaoui</a>" in html_body
     )
-    assert "Regards,\nMahmudul Hasan" in text_body
+    assert "Regards,\nHamza Missaoui" in text_body
     assert 'href="https://app.example.com"' in html_body
 
 
